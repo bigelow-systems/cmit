@@ -26,11 +26,13 @@ classifiers = [
     "Topic :: System :: Systems Administration",
     "Topic :: Utilities"
 ]
-packages = ["cmit"]
 
 [project.urls]
 Homepage = "https://github.com/bigelow-systems/cmit"
 Issues = "https://github.com/bigelow-systems/cmit/issues"
+
+[tool.setuptools]
+packages = ["cmit"]
 
 [tool.setuptools.dynamic]
 version = {attr = "cmit.__version__"}
