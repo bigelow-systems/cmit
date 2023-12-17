@@ -1,0 +1,9 @@
+include AUTHORS
+include LICENSE
+include MANIFEST.in
+include README.md
+graft cmit
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.so
+global-exclude *.dylib

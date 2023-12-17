@@ -1,3 +1,37 @@
 [build-system]
-requires = ['setuptools>=40.8.0']
+requires = ['setuptools>=61.0']
 build-backend = 'setuptools.build_meta'
+
+[project]
+name = "cmit"
+dynamic = ["version", "readme"]
+authors = [
+    {name="Jordan Bigelow", email="jordan@jordanbigelow.com"},
+    {name="Bigelow Systems", email="engineering+cmit@bigelow.systems"}
+]
+description = "A text-based protocol to support internal process communication (IPC) within a single node."
+license = {file = "LICENSE"}
+keywords = ["ipc", "process", "communication", "text", "protocol", "cmit"]
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Communications",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities"
+]
+packages = ["cmit"]
+
+[project.urls]
+Homepage = "https://github.com/bigelow-systems/cmit"
+Issues = "https://github.com/bigelow-systems/cmit/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "cmit.__version__"}
+readme = {file = ["README.md"], content_type = "text/markdown"}
