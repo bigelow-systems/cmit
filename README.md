@@ -19,17 +19,8 @@ found in the `demo` directory.
 
 ```python
 from cmit import server
-
 SOCKET_PATH = "/tmp/cmit.sock"
-
-class UNIXServer(server.CMITServer):
-    request_queue_size = 10
-
-class BaseHandler(server.SimpleCMITRequestHandler):
-    server_version = f"SimpleCMITHandler/1.0"
-
-demo_server = UNIXServer(SOCKET_PATH, BaseHandler)
-
+demo_server = server.CMITServer(SOCKET_PATH, server.SimpleCMITRequestHandler)
 demo_server.serve_forever()
 ```
 
@@ -68,14 +59,13 @@ is not optional. In a plain CMIT request, the message body is a JSON object cont
 
 ```json
 {
-  "id": "f4dc4223403b22fbca286ec676717440",
-  "timestamp": "1702712308.739593",
-  "topic": "test.handler",
-  "payload": {
-    "args": ["arg1", "arg2"],
-    "kwargs": {"key1": "value1", "key2": "value2"},
-    "data": "some data"
-  }
+"id": "f4dc4223403b22fbca286ec676717440", 
+"timestamp": "1702712308.739593",
+"topic": "test.handler",
+"payload": {
+"args": ["arg1", "arg2"], 
+"kwargs": {"key1": "value1", "key2": "value2"}, 
+"data": "some data"}
 }
 ```
 
