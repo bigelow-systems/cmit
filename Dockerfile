@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y \
     git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && pip3 install supervisor requests
+    && pip3 install supervisor requests cmit
 
 RUN mkdir -p /var/log/supervisor /var/log/cmit
 
-COPY cmit /src/cmit
 COPY ./demo/ /src/
+COPY ./supervisord.conf /src/supervisord.conf
 
 CMD ["/bin/sh", "-c", "supervisord -c /src/supervisord.conf"]

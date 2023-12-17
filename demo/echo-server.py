@@ -29,7 +29,7 @@ class TaskHandler(server.SimpleCMITRequestHandler):
             setattr(self.server, 'task_router', {})
 
         if que_name not in self.server.task_router:
-            self.server.task_router[que_name] = list
+            self.server.task_router[que_name] = []
 
         return self.server.task_router[que_name]
 
