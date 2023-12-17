@@ -1,0 +1,4 @@
+# Restrict all files related to pushing to the main branch
+# Require maintainer approval for all pull requests to main
+
+*       @bigelow-systems/admin
